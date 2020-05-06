@@ -18,10 +18,10 @@ Value LS_TOS_0_METRICS (\d+)
 
 Start
   ^\s*OSPF\s+Router\s+with\s+ID\s+\(${ROUTER_ID}\)\s+\(Process\s+ID\s+${PROCESS_ID}\)$$
-  ^\s+Router\s+Link\s+States\s+\(Area\s${AREA}\)$$ -> LSAInfo
+  ^\s+Router\s+Link\s+States\s+\(Area\s${AREA}\)$$ -> LSA_Header
   ^. -> Error
 
-LSAInfo
+LSA_Header
   ^\s+LS\s+age:\s+${LSA_AGE}$$
   ^\s+Options:\s+\(${LSA_OPTIONS}\)$$
   ^\s+LS\s+Type:\s+${LSA_TYPE}$$
@@ -30,17 +30,17 @@ LSAInfo
   ^\s+LS\s+Seq\s+Number:\s+${LSA_SEQ_NUMBER}$$
   ^\s+Checksum:\s+${LSA_CHECKSUM}$$
   ^\s+Length:\s+${LSA_LENGTH}$$
-  ^\s+Number\s+of\s+Links:\s+${LSA_NUM_LINKS}$$ -> LSAs
+  ^\s+Number\s+of\s+Links:\s+${LSA_NUM_LINKS}$$ -> Link
   ^\s*$$
   ^. -> Error
 
-LSAs
+Link
   ^\s+Link\s+connected\s+to:\s+${LS_LINK_TYPE}$$
   ^\s+\(Link\sID\)\s+((Network\/subnet\s+number)|(Designated\s+Router\s+address)|(Neighboring\s+Router\sID)):\s+${LS_LINK_ID}$$
   ^\s+\(Link\sData\)\s+((Network\s+Mask)|(Router\s+Interface\s+address)):\s+${LS_LINK_DATA}$$
   ^\s+Number\s+of\s+MTID\s+metrics:\s+${LS_MTID_METRICS}$$
   ^\s+TOS\s+0\s+Metrics:\s+${LS_TOS_0_METRICS}$$ -> Next.Record
-  ^\s+LS\s+age:\s+${LSA_AGE}$$ -> LSAInfo
+  ^\s+LS\s+age:\s+${LSA_AGE}$$ -> LSA_Header
   ^. -> Error
 
 EOF
