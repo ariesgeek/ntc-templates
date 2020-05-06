@@ -11,6 +11,7 @@ parsed_sample:
     lsa_seq_number: "80000206"
     lsa_checksum: "0x8A21"
     lsa_length: "72"
+    lsa_asbr: ""
     lsa_num_links: "4"
     ls_link_type:
       - "a Stub Network"
@@ -48,6 +49,7 @@ parsed_sample:
     lsa_seq_number: "80000202"
     lsa_checksum: "0xCA4F"
     lsa_length: "60"
+    lsa_asbr: ""
     lsa_num_links: "3"
     ls_link_type:
       - "a Stub Network"
@@ -80,6 +82,7 @@ parsed_sample:
     lsa_seq_number: "800001FD"
     lsa_checksum: "0x3969"
     lsa_length: "72"
+    lsa_asbr: ""
     lsa_num_links: "4"
     ls_link_type:
       - "a Stub Network"
@@ -117,6 +120,7 @@ parsed_sample:
     lsa_seq_number: "800001F7"
     lsa_checksum: "0x5CB0"
     lsa_length: "60"
+    lsa_asbr: ""
     lsa_num_links: "3"
     ls_link_type:
       - "a Stub Network"
