@@ -51,7 +51,7 @@ parsed_sample:
     lsa_checksum: "0xCA4F"
     lsa_length: "60"
     lsa_abr: ""
-    lsa_asbr: ""
+    lsa_asbr: "AS Boundary Router"
     lsa_num_links: "3"
     ls_link_type:
       - "a Stub Network"
