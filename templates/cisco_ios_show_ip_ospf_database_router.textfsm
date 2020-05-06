@@ -9,6 +9,7 @@ Value Required LSA_ADV_ROUTER (\d+\.\d+\.\d+\.\d+)
 Value Required LSA_SEQ_NUMBER (\S+)
 Value Required LSA_CHECKSUM (\S+)
 Value Required LSA_LENGTH (\d+)
+Value LSA_ABR (Area\sBorder\sRouter)
 Value LSA_ASBR (AS\sBoundary\sRouter)
 Value Required LSA_NUM_LINKS (\d+)
 Value List LS_LINK_TYPE (.+?)
@@ -23,6 +24,7 @@ Start
   ^. -> Error
 
 LSA_Header
+  ^\s+Router\s+Link\s+States\s+\(Area\s${AREA}\)$$
   ^\s+LS\s+age:\s+${LSA_AGE}$$
   ^\s+Options:\s+\(${LSA_OPTIONS}\)$$
   ^\s+LS\s+Type:\s+${LSA_TYPE}$$
@@ -31,6 +33,7 @@ LSA_Header
   ^\s+LS\s+Seq\s+Number:\s+${LSA_SEQ_NUMBER}$$
   ^\s+Checksum:\s+${LSA_CHECKSUM}$$
   ^\s+Length:\s+${LSA_LENGTH}$$
+  ^\s+${LSA_ABR}$$
   ^\s+${LSA_ASBR}$$
   ^\s+Number\s+of\s+Links:\s+${LSA_NUM_LINKS}$$ -> Link
   ^. -> Error
